@@ -1,0 +1,69 @@
+<header class="row my-5">
+    <div class="d-flex justify-content-center">
+        <h1>Lista de cidades</h1>
+    </div>
+</header>
+<main>
+    <div class="row">
+        <div class="d-flex justify-content-end me-5 pe-5">
+            <button type="button" class="btn btn-primary" [routerLink]="['/cidade-form']">
+                Nova cidade
+            </button>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>UF</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cidade of cidadeLista">
+                        <td>{{ cidade.id }}</td>
+                        <td>{{ cidade.nome }}</td>
+                        <td>{{ cidade.uf }}</td>
+                        <td>
+                            <button type="button" routerLink="/cidade-form/{{ cidade.id }}" class="btn btn-primary mr-1">
+                                Alterar
+                            </button>
+
+                            <button type="button" class="btn btn-danger" (click)="seleciona_cidade(cidade)" data-bs-toggle="modal" data-bs-target="#modalDelecao">
+                                Excluir
+                            </button>                          
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="modalDelecao" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmação</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma a deleção de "{{ cidadeSelecionada.id }}º cidade: {{ cidadeSelecionada.nome }}"?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-success" (click)="excluir()" data-bs-dismiss="modal">
+                        Confirmar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer></footer>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>MeuApp</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <app-root></app-root>
+    
+    <script src="https://kit.fontawesome.com/121ad6fd97.js" crossorigin="anonymous"></script>
+    <script>
+        const checkbox = document.getElementById("checkbox");
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                console.log("DARK");
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            } else {
+                console.log("LIGHT");
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

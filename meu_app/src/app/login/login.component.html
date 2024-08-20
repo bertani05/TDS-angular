@@ -1,0 +1,16 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <form method="post" class="d-flex flex-column mt-5" (ngSubmit)="logar()">
+        <h6 class="display-6 text-center">Entrada</h6>
+        <h6 class="h6 mb-4">Preencha todos os campos:</h6>
+
+        <label for="username" class="form-label">Nome de utilizador*</label>
+        <input type="text" name="username" [(ngModel)]="usuario">
+
+        <label for="password" class="form-label mt-3">Senha*</label>
+        <input type="password" name="password" [(ngModel)]="senha">
+    
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-4">Entrar</button>
+        </div>
+    </form>
+</div>

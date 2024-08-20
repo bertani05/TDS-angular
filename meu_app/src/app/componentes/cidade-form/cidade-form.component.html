@@ -1,0 +1,51 @@
+<header class="row d-flex justify-content-center my-5">
+    <h1>Adicionando cidade</h1>
+</header>
+<main>
+    <div class="container ml-5">
+        <form #cidadeForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="text" [(ngModel)]="cidade.id" class="form-control" disabled="true" name="id">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">                    
+                        <label>Nome: </label>                    
+                        <input type="text" [(ngModel)]="cidade.nome" class="form-control"  name="nome">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">                    
+                        <label>Uf: </label>                    
+                        <input type="text" [(ngModel)]="cidade.uf" class="form-control"  name="uf">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i>Salvar
+                    </button>
+                </div>
+
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-success" (click)="voltar_listagem()">
+                        <i class="fa-solid fa-arrow-left"></i>Voltar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<footer></footer>
